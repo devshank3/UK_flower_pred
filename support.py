@@ -175,6 +175,7 @@ def load_checkpoint(file_path):
 
     model.classifier = classifier_part
     model.load_state_dict(checkpoint['state_dict'])
+    model.class_to_idx = checkpoint['class_to_idx']
 
     print("New classifier block attached to the pre trained model is : \n")
     print(model.classifier)
